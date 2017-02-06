@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+       <menuContribution
+            locationURI="menu:com.in.innovative.ideas.viewmenu">
+         <command
+               commandId="com.in.innovative.ideas.windows.command"
+               icon="icons/windows.png"
+               label="&amp;Windows Monitoring"
+               mode="FORCE_TEXT"
+               style="push"
+               tooltip="Displays device configuration of windows.">
+         </command>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:com.in.innovative.ideas.toggletoolbar.main?">
+         <command
+               commandId="com.in.innovative.ideas.windows.command"
+               icon="icons/windows.png"
+               label="&amp;Windows Monitoring"
+               mode="FORCE_TEXT"
+               style="push"
+               tooltip="Displays device configuration of windows.">
+         </command>
+      </menuContribution>
+   </extension>
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="com.in.innovative.ideas.windows.category"
+            defaultHandler="com.in.bosch.advanceproject.windows.commands.Windows"
+            description="Displays device configuration of windows."
+            id="com.in.innovative.ideas.windows.command"
+            name="&amp;Windows Monitoring">
+      </command>
+      <category
+            description="Displays device configuration of windows."
+            id="com.in.innovative.ideas.windows.category"
+            name="Windows Monitoring">
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="com.in.innovative.ideas.windows.Windows"
+            icon="icons/windows.png"
+            id="com.in.innovative.ideas.windows"
+            name="&amp;Windows Monitoring">
+      </view>
+   </extension>
+</plugin>

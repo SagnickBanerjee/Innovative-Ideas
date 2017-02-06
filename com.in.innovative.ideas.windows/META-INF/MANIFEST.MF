@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Windows
+Bundle-SymbolicName: com.in.innovative.ideas.windows;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.in.innovative.ideas.windows.Activator
+Bundle-Vendor: Sagnick
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: com.in.bosch.advanceproject.windows.commands,
+ com.in.innovative.ideas.windows
