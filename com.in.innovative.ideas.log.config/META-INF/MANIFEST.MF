@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Config
+Bundle-SymbolicName: com.in.innovative.ideas.log.config
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: BOSCH
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: com.in.innovative.ideas.log.config.Activator
+Require-Bundle: org.slf4j.api;bundle-version="1.7.2",
+ ch.qos.logback.classic;bundle-version="1.0.7",
+ ch.qos.logback.core;bundle-version="1.0.7",
+ org.eclipse.core.runtime;bundle-version="3.12.0"
