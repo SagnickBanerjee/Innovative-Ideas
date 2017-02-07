@@ -54,4 +54,11 @@ require that the license under which any subsequent distribution of the Sample A
          version="0.0.0"
          unpack="false"/>
 
+   <plugin
+         id="com.in.innovative.ideas.log.config"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>

@@ -220,11 +220,22 @@
             targetID="*">
          <view
                closeable="false"
-               id="org.eclipse.ui.console.ConsoleView"
+               id="org.eclipse.ui.views.ProblemView"
                minimized="false"
                moveable="false"
                ratio="0.7f"
                relationship="bottom"
+               relative="com.in.innovative.ideas.windows"
+               showTitle="true"
+               visible="true">
+         </view>
+         <view
+               closeable="false"
+               id="org.eclipse.ui.console.ConsoleView"
+               minimized="false"
+               moveable="false"
+               ratio="0.7f"
+               relationship="right"
                relative="com.in.innovative.ideas.windows"
                showTitle="true"
                visible="true">

@@ -40,7 +40,6 @@ This product includes software developed by other open source projects including
       </win>
    </launcher>
 
-
    <vm>
    </vm>
 
@@ -72,18 +71,10 @@ require that the license under which any subsequent distribution of the Sample A
    <features>
       <feature id="com.in.innovative.ideas.addOns" version="1.0.0.qualifier"/>
       <feature id="com.in.innovative.ideas.features" version="1.0.0.qualifier"/>
+      <feature id="org.eclipse.e4.rcp" version="1.5.2.v20161122-1740"/>
+      <feature id="org.eclipse.rcp" version="4.6.2.v20161124-1400"/>
       <feature id="org.eclipse.emf.ecore"/>
-      <feature id="org.eclipse.ecf.filetransfer.httpclient4.feature"/>
-      <feature id="org.eclipse.ecf.filetransfer.httpclient4.ssl.feature"/>
       <feature id="org.eclipse.emf.common"/>
-      <feature id="org.eclipse.equinox.p2.core.feature"/>
-      <feature id="org.eclipse.ecf.core.feature"/>
-      <feature id="org.eclipse.rcp"/>
-      <feature id="org.eclipse.equinox.p2.rcp.feature"/>
-      <feature id="org.eclipse.ecf.filetransfer.feature"/>
-      <feature id="org.eclipse.ecf.core.ssl.feature"/>
-      <feature id="org.eclipse.ecf.filetransfer.ssl.feature"/>
-      <feature id="org.eclipse.e4.rcp"/>
    </features>
 
    <configurations>
