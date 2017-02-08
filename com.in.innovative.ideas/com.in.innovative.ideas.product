@@ -21,6 +21,8 @@ This product includes software developed by other open source projects including
    </configIni>
 
    <launcherArgs>
+      <vmArgs>-Dlog4j.configuration=/bin/log4j.properties
+      </vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
    </launcherArgs>
@@ -78,11 +80,11 @@ require that the license under which any subsequent distribution of the Sample A
    </features>
 
    <configurations>
+      <plugin id="com.in.innovative.ideas.log.config" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
    </configurations>
 

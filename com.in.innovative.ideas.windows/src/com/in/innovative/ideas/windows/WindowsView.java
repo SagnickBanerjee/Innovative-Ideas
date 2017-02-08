@@ -10,7 +10,7 @@ import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 
-public class Windows extends ViewPart {
+public class WindowsView extends ViewPart {
 	public static final String ID = "com.in.innovative.ideas.windows";
 
 	private TableViewer viewer;

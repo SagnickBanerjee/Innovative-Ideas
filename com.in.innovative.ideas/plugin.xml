@@ -220,7 +220,7 @@
             targetID="*">
          <view
                closeable="false"
-               id="org.eclipse.ui.views.ProblemView"
+               id="org.eclipse.pde.runtime.LogView"
                minimized="false"
                moveable="false"
                ratio="0.7f"

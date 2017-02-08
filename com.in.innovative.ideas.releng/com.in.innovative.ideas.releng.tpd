@@ -22,11 +22,6 @@ target "InnovativeIdeastarget" environment win32 win32 x86_64 with source
  	org.eclipse.ui.console [3.6.201,4.0.0)
  	org.eclipse.ui.views.log [1.2.1,2.0.0)
  	
- 	// Sl4j setup.
- 	org.slf4j.api [1.7.2,2.0.0)
- 	ch.qos.logback.classic [1.0.7,2.0.0)
- 	ch.qos.logback.core [1.0.7,2.0.0)
- 	
  	//Log4j setup.
  	org.apache.log4j [1.2.15,2.0.0)
  }
