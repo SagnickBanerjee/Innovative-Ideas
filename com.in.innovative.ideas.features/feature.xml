@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="com.in.innovative.ideas.features"
-      label="Features"
+      label="Innovative Ideas Features"
       version="1.0.0.qualifier"
       provider-name="Sagnick"
-      plugin="com.in.innovative.ideas">
+      plugin="com.in.innovative.ideas.branding">
 
    <description url="http://www.example.com/description">
       [The feature projects contains list of plugins that contributes
@@ -41,13 +41,6 @@ require that the license under which any subsequent distribution of the Sample A
    </license>
 
    <plugin
-         id="com.in.innovative.ideas"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="com.in.innovative.ideas.windows"
          download-size="0"
          install-size="0"
@@ -56,6 +49,13 @@ require that the license under which any subsequent distribution of the Sample A
 
    <plugin
          id="com.in.innovative.ideas.commons"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.in.innovative.ideas.branding"
          download-size="0"
          install-size="0"
          version="0.0.0"

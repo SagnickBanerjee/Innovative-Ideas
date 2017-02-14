@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.ui.menus">
        <menuContribution
-            locationURI="menu:com.in.innovative.ideas.viewmenu">
+            locationURI="menu:com.in.innovative.ideas.branding.viewmenu">
          <command
                commandId="com.in.innovative.ideas.windows.command"
                icon="icons/windows.png"
@@ -15,7 +15,7 @@
          </command>
       </menuContribution>
       <menuContribution
-            locationURI="toolbar:com.in.innovative.ideas.toggletoolbar.main?">
+            locationURI="toolbar:com.in.innovative.ideas.branding.toggletoolbar.main?">
          <command
                commandId="com.in.innovative.ideas.windows.command"
                icon="icons/windows.png"
