@@ -1,6 +1,11 @@
 package com.in.innovative.ideas.branding;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.jface.action.IContributionItem;
+import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IStatusLineManager;
 import org.eclipse.jface.preference.PreferenceManager;
 import org.eclipse.swt.SWT;
@@ -66,16 +71,35 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
 		getWindowConfigurer().getWindow().getShell().setMaximized(true);
 		statusline = getWindowConfigurer().getActionBarConfigurer().getStatusLineManager();
 
+		List<String> unwantedItems = Arrays.asList("org.eclipse.ui.run");
+
+		IMenuManager menuManager = getWindowConfigurer().getActionBarConfigurer().getMenuManager();
+		removeUnwantedItems(unwantedItems, menuManager);
+
 		PreferenceManager pm = PlatformUI.getWorkbench().getPreferenceManager();
 		pm.remove("org.eclipse.ui.preferencePages.Workbench");
 		pm.remove("org.eclipse.equinox.security.ui.storage");
 		pm.remove("org.eclipse.equinox.security.ui.category");
+		pm.remove("org.eclipse.debug.ui.DebugPreferencePage");
+		pm.remove("org.eclipse.team.ui.TeamPreferences");
 
 		window = getWindowConfigurer().getWindow();
 		trayItem = initTaskItem(window);
 		if (trayItem != null) {
 			minimizeBehavior();
 			hookPopupMenu();
+		}
+	}
+
+	private void removeUnwantedItems(final List<String> unwantedItems, final IMenuManager menuManager) {
+		IContributionItem[] items = menuManager.getItems();
+		for (IContributionItem item : items) {
+			if (item instanceof IMenuManager) {
+				removeUnwantedItems(unwantedItems, (IMenuManager) item);
+			}
+			if (unwantedItems.contains(item.getId())) {
+				menuManager.remove(item);
+			}
 		}
 	}
 

@@ -67,7 +67,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 	protected void fillCoolBar(ICoolBarManager coolBar) {
 		ToolBarManager toolbar = new ToolBarManager(SWT.FLAT | SWT.BOTTOM);
 		ToolBarContributionItem toolbarcontib = new ToolBarContributionItem(toolbar,
-				"com.in.innovative.ideas.toggletoolbar.main");
+				"com.in.innovative.ideas.branding.toggletoolbar.main");
 		coolBar.add(toolbarcontib);
 	}
 }

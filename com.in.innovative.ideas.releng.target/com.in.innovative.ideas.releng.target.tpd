@@ -1,6 +1,6 @@
 target "Innovative-Ideas-Target" environment win32 win32 x86_64 with source
  
- location "http://download.eclipse.org/releases/neon" {
+ location "http://download.eclipse.org/releases/neon/" {
  	// Basic stand-alone set-up.
  	org.eclipse.platform.feature.group [4.6.0,5.0.0)
  	org.eclipse.e4.rcp.feature.group [1.5.2,2.0.0)
@@ -24,11 +24,8 @@ target "Innovative-Ideas-Target" environment win32 win32 x86_64 with source
  	org.eclipse.equinox.concurrent [1.1.0,2.0.0)
  	
  	//Extras to load stand-alone application.
- 	org.eclipse.ui [3.108.0,4.0.0)
- 	org.eclipse.core.runtime [3.12.0,4.0.0)
  	org.eclipse.ui.console [3.6.200,4.0.0)
  	org.eclipse.ui.views.log [1.2.0,2.0.0)
- 	org.eclipse.update.configurator [3.3.400,4.0.0)
  	
  	//Log4j setup.
  	org.apache.log4j [1.2.15,2.0.0)

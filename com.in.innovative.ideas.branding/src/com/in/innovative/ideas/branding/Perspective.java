@@ -9,7 +9,7 @@ public class Perspective implements IPerspectiveFactory {
 	/**
 	 * The ID of the perspective as specified in the extension.
 	 */
-	public static final String ID = "com.in.innovative.ideas.branding";
+	public static final String ID = "com.in.innovative.ideas.branding.perspective";
 
 	@Override
 	public void createInitialLayout(IPageLayout layout) {
