@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+    <!-- Root page -->
+    <page id="root" style="html/style.css"  style-id="page">	    
+        <title style-id="intro-header">Innovative Ideas Intro</title>
+        <link url="http://org.eclipse.ui.intro/close" label="Go to the Workbench" id="workbench" />
+    </page>
+	
+    <!-- Standby page -->    
+    
+    <!-- Tutorials page -->   
+</introContent>

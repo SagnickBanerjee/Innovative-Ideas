@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Innovative Ideas Commons
+Bundle-SymbolicName: com.in.innovative.ideas.commons
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: Sagnick
+Export-Package: com.in.innovative.ideas.commons.log
+Require-Bundle: org.apache.log4j;bundle-version="1.2.15",
+ org.eclipse.core.runtime;bundle-version="3.12.0",
+ org.eclipse.ui.workbench

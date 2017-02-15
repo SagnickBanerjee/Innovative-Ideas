@@ -3,8 +3,12 @@ package com.in.bosch.advanceproject.windows.commands;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
+
+import com.in.innovative.ideas.commons.log.Log;
+import com.in.innovative.ideas.windows.Activator;
 
 public class Windows extends AbstractHandler {
 	@Override
@@ -12,8 +16,9 @@ public class Windows extends AbstractHandler {
 		try {
 			PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
 					.showView("com.in.innovative.ideas.windows");
+			String infoMsg = "Windows View Test... ";
+			Log.getInstance().log(Activator.PLUGIN_ID, IStatus.INFO, infoMsg, null);
 		} catch (PartInitException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;

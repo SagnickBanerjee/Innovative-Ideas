@@ -1,0 +1,227 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.in.innovative.ideas</groupId>
+	<artifactId>com.in.innovative.ideas.parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<tycho.version>0.26.0</tycho.version>
+	</properties>
+
+	<prerequisites>
+		<maven>3.0.1</maven>
+	</prerequisites>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-extras-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-compiler-plugin</artifactId>
+			</plugin>
+
+
+		</plugins>
+
+		<pluginManagement>
+
+			<!-- Define versions of all tycho and maven plugins we use. -->
+
+			<plugins>
+
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-maven-plugin</artifactId>
+					<version>${tycho.version}</version>
+					<extensions>true</extensions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-extras-plugin</artifactId>
+					<version>${tycho.version}</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-compiler-plugin</artifactId>
+					<version>${tycho.version}</version>
+					<configuration>
+						<encoding>${project.build.sourceEncoding}</encoding>
+						<source>8.0</source>
+						<target>8.0</target>
+						<showWarnings>true</showWarnings>
+						<showDeprecation>true</showDeprecation>
+						<useProjectSettings>true</useProjectSettings>
+						<optimize>true</optimize>
+
+						<!-- Refer http://help.eclipse.org/neon/index.jsp?topic=/org.eclipse.jdt.doc.user/tasks/task-using_batch_compiler.htm 
+							for more. -->
+						<compilerArgument>-enableJavadoc</compilerArgument>
+						<compilerArgument>-warn:-warningToken</compilerArgument>
+
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-surefire-plugin</artifactId>
+					<version>${tycho.version}</version>
+					<configuration>
+						<!-- Max timeout for a testcase. -->
+						<forkedProcessTimeoutInSeconds>1800</forkedProcessTimeoutInSeconds>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-publisher-plugin</artifactId>
+					<version>${tycho.version}</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-director-plugin</artifactId>
+					<version>${tycho.version}</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>target-platform-configuration</artifactId>
+					<version>${tycho.version}</version>
+					<configuration>
+						<target>
+							<artifact>
+								<groupId>com.in.innovative.ideas</groupId>
+								<artifactId>com.in.innovative.ideas.releng.target</artifactId>
+								<version>1.0.0-SNAPSHOT</version>
+							</artifact>
+						</target>
+						<environments>
+							<environment>
+								<os>win32</os>
+								<ws>win32</ws>
+								<arch>x86_64</arch>
+							</environment>
+						</environments>
+						<dependency-resolution>
+							<optionalDependencies>ignore</optionalDependencies>
+						</dependency-resolution>
+						<filters>
+
+							<filter>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.jdt.core</id>
+								<removeAll />
+							</filter>
+							<filter>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.jdt.debug</id>
+								<removeAll />
+							</filter>
+							<filter>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.jdt.launching</id>
+								<removeAll />
+							</filter>
+							<filter>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.jdt.ui</id>
+								<removeAll />
+							</filter>
+
+							<!-- We cannot exclude all MWE plugins as some of them are needed 
+								for tests. -->
+							<filter>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.emf.mwe2.language</id>
+								<removeAll />
+							</filter>
+							<filter>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.emf.mwe2.language.ui</id>
+								<removeAll />
+							</filter>
+							<filter>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.emf.mwe2.launch</id>
+								<removeAll />
+							</filter>
+
+							<!-- emf.codegen needed for code generation during build. -->
+							<filter>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.emf.codegen</id>
+								<removeAll />
+							</filter>
+
+							<filter>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.emf.codegen.ecore</id>
+								<removeAll />
+							</filter>
+
+							<!-- xtext generator needed for code generation during the build. -->
+							<filter>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.xtext.generator</id>
+								<removeAll />
+							</filter>
+
+							<!-- xbase is part of the xtext sdk feature in our target, but we 
+								only want to use the xbase.lib, not xbase itself TODO Where exactly is this 
+								used? -->
+							<!-- <filter> <type>eclipse-plugin</type> <id>org.eclipse.xtext.xbase</id> 
+								<removeAll /> </filter> -->
+
+							<!-- junit -->
+							<filter>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.jdt.junit.runtime</id>
+								<removeAll />
+							</filter>
+
+							<!-- PDE runtime spy -->
+							<filter>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.pde.runtime</id>
+								<removeAll />
+							</filter>
+
+							<!-- PDE junit -->
+							<filter>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.pde.junit.runtime</id>
+								<removeAll />
+							</filter>
+
+							<!-- SWTBot spy -->
+							<filter>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.swtbot.eclipse.spy</id>
+								<removeAll />
+							</filter>
+
+						</filters>
+					</configuration>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+
+	</build>
+</project>

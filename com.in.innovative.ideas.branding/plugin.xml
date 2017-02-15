@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.in.innovative.ideas.branding.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.in.innovative.ideas.branding.Perspective"
+            icon="icons/idea.png"
+            id="com.in.innovative.ideas.branding.perspective"
+            name="Innovative Ideas">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               id="com.in.innovative.ideas.branding.filemenu"
+               label="&amp;File"
+               tooltip="Opens the file menu.">
+            <command
+                  commandId="org.eclipse.ui.file.restartWorkbench"
+                  label="&amp;Restart"
+                  mode="FORCE_TEXT"
+                  style="push"
+                  tooltip="Restart the application.">
+            </command>
+            <command
+                  commandId="org.eclipse.ui.file.exit"
+                  label="&amp;Exit"
+                  style="push"
+                  tooltip="Exits the application.">
+            </command>
+         </menu>
+         <menu
+               id="com.in.innovative.ideas.branding.viewmenu"
+               label="&amp;View"
+               tooltip="Opens the view menu.">
+         </menu>
+         <menu
+               id="com.in.innovative.ideas.branding.windowmenu"
+               label="&amp;Window"
+               tooltip="Opens the windows menu.">
+            <command
+                  commandId="org.eclipse.ui.window.preferences"
+                  label="&amp;Preferences"
+                  mode="FORCE_TEXT"
+                  style="push"
+                  tooltip="Opens the preference page for the application.">
+            </command>
+            <command
+                  commandId="com.in.innovative.ideas.branding.toggletoolbar"
+                  label="&amp;Toggle Toolbar"
+                  mode="FORCE_TEXT"
+                  style="push"
+                  tooltip="Toggels the coolbar of the application.">
+            </command>
+            <command
+                  commandId="org.eclipse.ui.perspectives.showPerspective"
+                  label="&amp;Open Perspective.."
+                  mode="FORCE_TEXT"
+                  style="push"
+                  tooltip="Opens the prespective view.">
+            </command>
+            <command
+                  commandId="org.eclipse.ui.window.savePerspective"
+                  label="&amp;Save Perspective As.."
+                  mode="FORCE_TEXT"
+                  style="push"
+                  tooltip="Saves the user defined prespective.">
+            </command>
+            <command
+                  commandId="org.eclipse.ui.window.resetPerspective"
+                  label="&amp;Reset Perspective"
+                  mode="FORCE_TEXT"
+                  style="push"
+                  tooltip="Reset the prespective of the application.">
+            </command>
+         </menu>
+         <menu
+               id="com.in.innovative.ideas.branding.helpmenu"
+               label="&amp;Help"
+               tooltip="Opens the help menu.">
+            <command
+                  commandId="org.eclipse.ui.help.helpContents"
+                  label="&amp;Help &amp;Contents"
+                  mode="FORCE_TEXT"
+                  style="push"
+                  tooltip="Opens the help context of the application.">
+            </command>
+            <command
+                  commandId="org.eclipse.ui.help.helpSearch"
+                  label="&amp;Search"
+                  style="push"
+                  tooltip="Search keywods in the application.">
+            </command>
+            <separator
+                  name="com.in.innovative.ideas.branding.separator"
+                  visible="true">
+            </separator>
+            <command
+                  commandId="org.eclipse.equinox.p2.ui.sdk.update"
+                  label="&amp;Check for Updates"
+                  mode="FORCE_TEXT"
+                  style="push"
+                  tooltip="Checks is any available updates are present for the application.">
+            </command>
+            <command
+                  commandId="org.eclipse.ui.help.quickStartAction"
+                  label="&amp;Welcome"
+                  mode="FORCE_TEXT"
+                  style="push"
+                  tooltip="Opens the welcome page for the application.">
+            </command>
+            <command
+                  commandId="org.eclipse.ui.help.aboutAction"
+                  label="&amp;About"
+                  mode="FORCE_TEXT"
+                  style="push"
+                  tooltip="Opens the about page of the application.">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.menu?after=additions">
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.activities">
+      <activity
+            id="com.in.innovative.ideas.branding.activity"
+            name="Hide Actions">
+      </activity>
+      <activityPatternBinding
+            activityId="com.in.innovative.ideas.branding.activity"
+            isEqualityPattern="true"
+            pattern="org.eclipse.ui.edit.text.gotoLastEditPosition">
+      </activityPatternBinding>
+      <activityPatternBinding
+            activityId="com.in.innovative.ideas.branding.activity"
+            pattern="org.eclipse.ui.editors/org.eclipse.ui.edit.text.gotoNextAnnotation">
+      </activityPatternBinding>
+      <activityPatternBinding
+            activityId="com.in.innovative.ideas.branding.activity"
+            pattern="org.eclipse.ui.editors/org.eclipse.ui.edit.text.gotoPreviousAnnotation">
+      </activityPatternBinding>
+      <activityPatternBinding
+            activityId="com.in.innovative.ideas.branding.activity"
+            pattern="org.eclipse.search.*">
+      </activityPatternBinding>
+      <activityPatternBinding
+            activityId="com.in.innovative.ideas.branding.activity"
+            pattern="org.eclipse.ui.externaltools.*">
+      </activityPatternBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="com.in.innovative.ideas.branding.category"
+            defaultHandler="com.in.innovative.ideas.branding.ToggleToolBar"
+            description="Toggels the coolbar of the application."
+            id="com.in.innovative.ideas.branding.toggletoolbar"
+            name="&amp;Toggle Toolbar">
+      </command>
+      <category
+            description="Toggels the coolbar of the application."
+            id="com.in.innovative.ideas.branding.category"
+            name="&amp;Toggle Toolbar">
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="com.in.innovative.ideas.branding.perspective">
+         <view
+               closeable="false"
+               id="org.eclipse.pde.runtime.LogView"
+               minimized="false"
+               moveable="false"
+               ratio="0.7f"
+               relationship="bottom"
+               relative="com.in.innovative.ideas.windows"
+               showTitle="true"
+               visible="true">
+         </view>
+         <view
+               closeable="false"
+               id="org.eclipse.ui.console.ConsoleView"
+               minimized="false"
+               moveable="false"
+               ratio="0.7f"
+               relationship="right"
+               relative="com.in.innovative.ideas.windows"
+               showTitle="true"
+               visible="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="com.in.innovative.ideas.branding.StartUp">
+      </startup>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro">
+      <intro
+            class="org.eclipse.ui.intro.config.CustomizableIntroPart"
+            id="com.in.innovative.ideas.branding.intro">
+      </intro>
+      <introProductBinding
+            introId="com.in.innovative.ideas.branding.intro"
+            productId="com.in.innovative.ideas.branding.deploy">
+      </introProductBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.config">
+      <config
+            content="introContent.xml"
+            id="com.in.innovative.ideas.branding.intro"
+            introId="com.in.innovative.ideas.branding.intro">
+         <presentation
+               home-page-id="root">
+            <implementation
+                  kind="html"
+                  os="win32,linux,macosx"
+                  style="content/shared.css">
+            </implementation>
+         </presentation>
+      </config>
+   </extension>
+   <extension
+         point="org.eclipse.ui.splashHandlers">
+      <splashHandler
+            class="com.in.innovative.ideas.branding.splash.SplashHandler"
+            id="com.in.innovative.ideas.branding.splash">
+      </splashHandler>
+      <splashHandlerProductBinding
+            productId="com.in.innovative.ideas.branding.deploy"
+            splashId="com.in.innovative.ideas.branding.splash">
+      </splashHandlerProductBinding>
+   </extension>
+   <extension
+         id="deploy"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.in.innovative.ideas.branding.application"
+            name="Innovative Ideas">
+         <property
+               name="windowImages"
+               value="icons/idea.png">
+         </property>
+         <property
+               name="aboutText"
+               value="Innovative Ideas Tools&#x0A;&#x0A;Version: 1.0.0.qualifier&#x0A;&#x0A;(c) Copyright Eclipse contributors and https://github.com/SagnickBanerjee/Innovative-Ideas/projects.&#x0A;All rights reserved. Eclipse and the Eclipse logo are trademarks of the Eclipse Foundation, Inc., https://www.eclipse.org/. The Eclipse logo cannot be altered without Eclipse&apos;s permission. Eclipse logos are provided for use under the Eclipse logo and trademark guidelines, https://www.eclipse.org/logotm/. Oracle and Java are trademarks or registered trademarks of Oracle and/or its affiliates. Other names may be trademarks of their respective owners.&#x0A;&#x0A;This product includes software developed by other open source projects including the Apache Software Foundation, https://www.apache.org/.">
+         </property>
+         <property
+               name="aboutImage"
+               value="icon/about.png">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="00FF00">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,240,445,15">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,230,445,20">
+         </property>
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/com.in.innovative.ideas.branding/i2.css">
+         </property>
+         <property
+               name="appName"
+               value="Innovative Ideas">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
+
+</plugin>
