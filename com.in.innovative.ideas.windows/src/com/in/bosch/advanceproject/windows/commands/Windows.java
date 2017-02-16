@@ -16,7 +16,7 @@ public class Windows extends AbstractHandler {
 		try {
 			PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
 					.showView("com.in.innovative.ideas.windows");
-			String infoMsg = "Windows View Test... ";
+			String infoMsg = "INFO: Windows View Test... ";
 			Log.getInstance().log(Activator.PLUGIN_ID, IStatus.INFO, infoMsg, null);
 		} catch (PartInitException e) {
 			e.printStackTrace();
