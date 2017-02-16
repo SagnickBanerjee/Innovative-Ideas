@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="Innovative-Ideas-Target" sequenceNumber="1487173225">
+<target name="Innovative-Ideas-Target" sequenceNumber="1487262681">
   <locations>
     <location includeMode="slicer" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.platform.feature.group" version="4.6.2.v20161124-1529"/>
@@ -22,6 +22,7 @@
       <unit id="org.eclipse.equinox.concurrent" version="1.1.0.v20130327-1442"/>
       <unit id="org.eclipse.ui.console" version="3.6.201.v20161107-0337"/>
       <unit id="org.eclipse.ui.views.log" version="1.2.1.v20160829-0826"/>
+      <unit id="org.eclipse.ui.intro" version="3.5.2.v20161116-1147"/>
       <unit id="org.apache.log4j" version="1.2.15.v201012070815"/>
       <unit id="org.apache.commons.lang3" version="3.1.0.v201403281430"/>
       <unit id="org.apache.commons.io" version="2.2.0.v201405211200"/>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Innovative Ideas" uid="com.in.innovative.ideas.product" id="com.in.innovative.ideas.branding.deploy" application="com.in.innovative.ideas.branding.application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="Innovative Ideas" uid="com.in.innovative.ideas.product" id="com.in.innovative.ideas.branding.deploy" application="com.in.innovative.ideas.branding.application" version="1.0.1.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/com.in.innovative.ideas.branding/icon/about.png"/>
       <text>
          Innovative Ideas Tools
 
-Version: 1.0.0.qualifier
+Version: 1.0.1.qualifier
 
 (c) Copyright Eclipse contributors and https://github.com/SagnickBanerjee/Innovative-Ideas/projects.
 All rights reserved. Eclipse and the Eclipse logo are trademarks of the Eclipse Foundation, Inc., https://www.eclipse.org/. The Eclipse logo cannot be altered without Eclipse&apos;s permission. Eclipse logos are provided for use under the Eclipse logo and trademark guidelines, https://www.eclipse.org/logotm/. Oracle and Java are trademarks or registered trademarks of Oracle and/or its affiliates. Other names may be trademarks of their respective owners.
@@ -42,7 +42,6 @@ This product includes software developed by other open source projects including
       </win>
    </launcher>
 
-
    <vm>
       <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</windows>
    </vm>
@@ -73,7 +72,7 @@ require that the license under which any subsequent distribution of the Sample A
    </plugins>
 
    <features>
-      <feature id="com.in.innovative.ideas.features" version="1.0.0.qualifier"/>
+      <feature id="com.in.innovative.ideas.features" version="1.0.1.qualifier"/>
       <feature id="org.eclipse.equinox.p2.core.feature" version="1.3.201.v20161115-1950"/>
       <feature id="org.eclipse.platform" version="4.6.2.v20161124-1529"/>
       <feature id="org.eclipse.ecf.filetransfer.httpclient4.feature"/>

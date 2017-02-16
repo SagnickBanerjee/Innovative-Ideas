@@ -45,7 +45,7 @@ public class StartUp implements IStartup {
 			}
 		}
 		// no console found -> create new one
-		MessageConsole newConsole = new MessageConsole(name, null);
+		MessageConsole newConsole = new MessageConsole(name, Activator.getImageDescriptor("icons/idea.png"));
 		conMan.addConsoles(new IConsole[] { newConsole });
 		return newConsole;
 	}

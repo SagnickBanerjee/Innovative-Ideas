@@ -1,2 +1,2 @@
 instructions.configure=\
-addRepository(type:0,location:file${#58}/C:/Users/SAGNICK/Desktop/Work/updateSite/Site1/I2/repository/);
+addRepository(type:0,location:file${#58}/C:/Users/SAGNICK/Desktop/Work/updateSite/I2/repository/);

@@ -26,6 +26,7 @@ target "Innovative-Ideas-Target" environment win32 win32 x86_64 with source
  	//Extras to load stand-alone application.
  	org.eclipse.ui.console [3.6.200,4.0.0)
  	org.eclipse.ui.views.log [1.2.0,2.0.0)
+ 	org.eclipse.ui.intro [3.5.0,4.0.0)
  	
  	//Log4j setup.
  	org.apache.log4j [1.2.15,2.0.0)
